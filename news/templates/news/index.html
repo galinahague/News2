@@ -1,0 +1,13 @@
+{% load custom_filters %}
+
+{% block title %}
+News
+{% endblock title %}
+
+{% for new in news %}
+<p>{{new.title|censor}}:{{new.datepost|date:'d M Y'}}</p>
+<p>{{new.text|truncate-chars:20|censor}}</p>
+<a href="{{ new.get_absolute_url }}">News url</a>
+{% endfor %}
+{% block content%}
+{% endblock content%}
