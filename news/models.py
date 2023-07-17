@@ -1,8 +1,14 @@
 from django.db import models
-from django.shortcuts import revers
+from django.urls import reverse
 
 # Create your models here.
 class New(models.Model):
+    NEWS = 'NW'
+    ARTICLE = 'AR'
+    CATEGORY_CHOICES = (
+        (NEWS, 'Новости'),
+        (ARTICLE, 'стастья')
+    )
     title = models.CharField(max_length=128)
     text = models.TextField()
     datepost = models.DateTimeField(auto_now_add=True)
